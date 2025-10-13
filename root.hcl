@@ -32,19 +32,3 @@ remote_state {
     if_exists = "overwrite_terragrunt"
   }
 }
-
-
-#catalog {
-#  urls = [
-#    "https://github.com/gruntwork-io/terragrunt-infrastructure-modules-example",
-#    "https://github.com/gruntwork-io/terraform-aws-utilities",
-#    "https://github.com/gruntwork-io/terraform-kubernetes-namespace"
-#  ]
-#}
-#
-
-inputs = merge(
-  local.account_vars.locals,
-#  local.region_vars.locals,
-#  local.environment_vars.locals,
-)

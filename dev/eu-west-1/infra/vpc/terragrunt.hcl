@@ -12,7 +12,6 @@ terraform {
 }
 
 inputs = {
-#  name = "terragrunt-test-sss"
   name = "terragrunt-test-${local.account_name}"
   azs  = ["eu-west-1a", "eu-west-1b"]
   cidr = "10.0.0.0/16"

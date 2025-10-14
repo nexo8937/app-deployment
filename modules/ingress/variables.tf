@@ -1,3 +1,9 @@
 variable "additional_set" {
-  type = map(any)
+  description = "Additional Helm values to set for nginx-controller"
+  type = list(object({
+    name  = string
+    value = string
+    type  = string
+  }))
+  default = []
 }

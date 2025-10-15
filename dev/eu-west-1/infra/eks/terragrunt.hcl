@@ -39,7 +39,7 @@ inputs = {
     node-group = {
       ami_type = "AL2023_x86_64_STANDARD"
 
-      instance_types = ["t3.small"]
+      instance_types = ["t3.medium"]
 
       desired_size = 1
       max_size = 2

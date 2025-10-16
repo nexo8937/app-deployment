@@ -4,6 +4,7 @@ metadata:
   name: my-app-ingress
   annotations:
     nginx.ingress.kubernetes.io/affinity: "cookie"
+    nginx.ingress.kubernetes.io/rewrite-target: /app
 spec:
   ingressClassName: nginx
   rules:

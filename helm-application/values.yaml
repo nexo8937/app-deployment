@@ -1,0 +1,6 @@
+container:
+  name:  terragrunt-test
+  image: nginx
+#  image: 548844171305.dkr.ecr.eu-west-1.amazonaws.com/hotel-management-dev:latest
+
+replicacount: 3

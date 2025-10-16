@@ -9,6 +9,7 @@ include {
 
 inputs = {
   namespace  = "argocd"
+  create_namespace = true
   values     = [file("values.yaml")]
 }
 

@@ -1,0 +1,41 @@
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: argocd
+#  namespace: argocd
+#spec:
+#  project: default
+#
+#  source:
+#    repoURL: "https://github.com/nexo8937/terragrunt-deployment.git"
+#    targetRevision: HEAD
+#    path: helm
+#
+#  destination:
+#    server: https://kubernetes.default.svc
+#    namespace: default
+#
+#  syncPolicy:
+#    automated: {}  # uncomment this if you want auto-sync
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/nexo8937/terragrunt-deployment.git"
+    targetRevision: HEAD
+    path: helm
+    helm:                # <-- this section is for Helm-specific settings
+      valueFiles:        # optional: use custom values.yaml files
+        - values.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

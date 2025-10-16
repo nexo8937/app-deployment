@@ -21,14 +21,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx-app
+  name: test
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: "https://github.com/nexo8937/terragrunt-deployment.git"
+    repoURL: "https://github.com/nexo8937/app-deployment"
     targetRevision: HEAD
-    path: helm
+    path: helm-application
     helm:                # <-- this section is for Helm-specific settings
       valueFiles:        # optional: use custom values.yaml files
         - values.yaml
@@ -36,6 +36,8 @@ spec:
     server: 'https://kubernetes.default.svc'
     namespace: default
   syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
     automated:
       prune: true
       selfHeal: true

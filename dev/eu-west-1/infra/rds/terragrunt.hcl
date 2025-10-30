@@ -19,7 +19,7 @@ dependency "vpc" {
 }
 
 dependency "security_group" {
-  config_path  = "../rds-sg"
+  config_path  = "../security-group"
   mock_outputs        = {
     security_group_id = "security_group_id"
     }

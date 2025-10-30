@@ -40,3 +40,8 @@ dependency "eks" {
     cluster_name                     = "cluster_name"
   }
 }
+
+dependency "ingress" {
+   config_path = "../ingress" 
+   skip_outputs = true
+}
